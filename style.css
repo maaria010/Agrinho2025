@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Estilos Gerais para o corpo da página */
+body {
+    font-family: 'Inter', sans-serif; /* Usa a fonte Inter e fallback para sans-serif */
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Fundo suave */
+    color: #333; /* Cor de texto padrão */
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links de âncora */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #2e8b57; /* Verde floresta para o cabeçalho */
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* Estilo da navegação (menu) */
+nav ul {
+    list-style: none; /* Remove marcadores de lista */
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex; /* Para alinhar os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+}
+
+nav ul li {
+    margin: 0 18px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Remove sublinhado dos links */
+    font-weight: 600; /* Negrito */
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out; /* Transição suave na cor */
+}
+
+nav ul li a:hover {
+    color: #a2f2b3; /* Cor mais clara no hover */
+}
+
+/* Estilos para o conteúdo principal */
+main {
+    padding: 30px 20px;
+    max-width: 1200px; /* Largura máxima para o conteúdo */
+    margin: 30px auto; /* Centraliza o conteúdo e adiciona margem */
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    border-radius: 12px; /* Cantos mais arredondados */
+}
+
+/* Estilo para as seções */
+section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #e0e0e0; /* Linha tracejada para separar seções */
+}
+
+section:last-child {
+    border-bottom: none; /* Remove a linha da última seção */
+}
+
+h2 {
+    color: #3cb371; /* Verde médio para títulos de seção */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    position: relative; /* Para o efeito de sublinhado */
+    padding-bottom: 10px;
+}
+
+h2::after { /* Efeito de sublinhado nos títulos */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #a2f2b3; /* Verde claro */
+    border-radius: 2px;
+}
+
+/* Estilo para a seção de herói (primeira seção) */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Conteúdo e imagem um abaixo do outro por padrão */
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: none; /* Não tem linha tracejada */
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: #2e8b57;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para a galeria de produtos */
+.galeria-produtos {
+    display: flex;
+    flex-direction: column; /* Categorias empilhadas */
+    gap: 40px;
+}
+
+.produto-categoria h3 {
+    text-align: center;
+    color: #4CAF50; /* Um tom de verde diferente para subcategorias */
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.produto-categoria h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #4CAF50;
+    border-radius: 1.5px;
+}
+
+.produto-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Layout responsivo de grid */
+    gap: 25px;
+    justify-content: center; /* Centraliza itens no grid */
+}
+
+.produto-item, .agricultor-perfil {
+    background-color: #f0fff0; /* Verde claríssimo */
+    border: 1px solid #d4ffd4; /* Borda suave */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out; /* Efeito no hover */
+}
+
+.produto-item:hover, .agricultor-perfil:hover {
+    transform: translateY(-5px); /* Levanta um pouco no hover */
+}
+
+.produto-item img, .agricultor-perfil img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: 200px; /* Altura fixa para as imagens dos produtos */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.produto-item p, .agricultor-perfil p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.agricultor-perfil img {
+    height: 150px; /* Altura um pouco menor para fotos de perfil */
+    border-radius: 50%; /* Imagem redonda para perfil */
+    object-fit: cover;
+    width: 150px; /* Largura igual à altura para a imagem redonda */
+}
+
+/* Estilos para a lista de agricultores */
+.lista-agricultores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Estilos para a seção de localização */
+#localizacao ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#localizacao ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#localizacao address {
+    font-style: normal; /* Remove itálico padrão */
+    text-align: center;
+    font-size: 1.1rem;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Estilos para o formulário de contato */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+}
+
+form label {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+form input, form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #3cb371; /* Borda verde no foco */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(60, 179, 113, 0.3);
+}
+
+form button {
+    background-color: #3cb371;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #2e8b57;
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #2e8b57;
+    color: white;
+    margin-top: 40px;
+    border-radius: 0 0 12px 12px; 
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* ================== Responsividade ================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column; /* Itens do menu empilhados */
+        gap: 10px; /* Espaçamento entre eles */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .produto-items, .lista-agricultores {
+        grid-template-columns: 1fr; /* Um item por linha */
+    }
+
+    .produto-item img, .agricultor-perfil img {
+        height: 180px; /* Ajusta altura da imagem */
+    }
+}
+
+/* Para telas muito pequenas (até 480px - celulares) */
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .produto-item, .agricultor-perfil {
+        padding: 15px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input, form textarea, form button {
+        font-size: 0.95rem;
+    }
+}
